@@ -6,78 +6,39 @@
     <title>阿曼之旅社區115年度公共安全檢查改善說明</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f3f4f6; }
-        
-        /* 隱藏原生 details 的箭頭並自訂 */
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
-        
-        @keyframes slideDown {
-            0% { opacity: 0; transform: translateY(-10px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .image-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #e5e7eb;
-            color: #6b7280;
-            border: 2px dashed #9ca3af;
-            border-radius: 0.5rem;
-            min-height: 200px;
-            font-weight: 500;
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e3a8a', /* 深藍：公告 */
-                        success: '#059669', /* 綠色：改善方案 */
-                        warning: '#f97316', /* 橘色：提醒 */
-                        danger: '#dc2626',  /* 紅色：法規 */
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="assets/js/scroll-navigation.js" defer></script>
+    <script src="assets/js/unit-case-modal.js" defer></script>
 </head>
 <body class="text-gray-800 antialiased selection:bg-primary selection:text-white pb-20">
 
     <!-- 導覽列 -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
-        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center overflow-x-auto whitespace-nowrap">
-            <a href="#" class="font-bold text-primary flex items-center gap-2">
-                <i class="fa-solid fa-building-shield"></i> 阿曼之旅社區
+    <nav id="site-navigation" aria-label="主要導覽" aria-hidden="true" class="site-navigation fixed inset-x-0 top-0 z-50 overflow-hidden border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-md">
+        <div class="mx-auto max-w-4xl px-3 py-2 sm:px-4">
+            <a href="#" class="block overflow-hidden text-ellipsis whitespace-nowrap rounded-t-lg bg-primary px-3 py-1 text-center text-[15px] font-bold leading-7 text-white sm:text-lg md:text-xl" aria-label="返回頁首">
+                阿曼之旅社區｜115年度公共安全檢查改善說明
             </a>
-            <div class="flex gap-4 text-sm font-medium text-gray-600">
-                <a href="#public-area" class="hover:text-primary transition">公共區域</a>
-                <a href="#door-area" class="hover:text-primary transition">外門改善</a>
-                <a href="#faq" class="hover:text-primary transition">FAQ</a>
-                <a href="#survey" class="bg-success text-white px-3 py-1 rounded-full hover:bg-emerald-700 transition">填寫意願</a>
+            <div class="grid grid-cols-2 overflow-hidden rounded-b-lg border border-t-0 border-gray-200 text-center text-sm font-bold sm:text-base">
+                <a href="#public-area" class="bg-blue-50 px-2 py-2 text-primary transition hover:bg-blue-100">公共改善事項</a>
+                <a href="#door-area" class="border-l border-gray-200 bg-emerald-50 px-2 py-2 text-success transition hover:bg-emerald-100">住戶改善事項</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero 首頁區 -->
-    <header class="bg-primary text-white py-12 px-4 rounded-b-[2.5rem] shadow-lg relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+    <header class="relative overflow-hidden rounded-b-[2.5rem] bg-gradient-to-br from-blue-950 via-primary to-blue-600 px-4 py-12 text-white shadow-lg">
+        <div class="hero-pattern absolute top-0 left-0 w-full h-full opacity-10"></div>
         <div class="max-w-4xl mx-auto relative z-10">
             <div class="inline-block bg-white/20 px-3 py-1 rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
                 📢 最新公告
             </div>
-            <h1 class="text-3xl md:text-5xl font-black mb-6 leading-tight">阿曼之旅社區<br class="hidden md:block">115年度公共安全檢查改善說明</h1>
+            <h1 class="mb-6 break-all text-2xl font-black leading-tight sm:text-3xl md:text-5xl">阿曼之旅社區<br>115年度公共安全檢查改善說明</h1>
             
             <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 md:p-6 mb-8 text-white/90 space-y-3">
                 <p class="flex items-start gap-2"><i class="fa-solid fa-check-circle mt-1 text-emerald-400"></i> 本社區依法每三年辦理公共安全檢查。</p>
                 <p class="flex items-start gap-2"><i class="fa-solid fa-check-circle mt-1 text-emerald-400"></i> 本次檢查提出部分改善事項。</p>
                 <p class="flex items-start gap-2"><i class="fa-solid fa-check-circle mt-1 text-emerald-400"></i> 本網站目的為協助住戶了解改善內容及後續處理方式。</p>
-                <p class="flex items-start gap-2 font-bold text-yellow-300"><i class="fa-solid fa-triangle-exclamation mt-1"></i> 目前尚未進入住戶外門拆除作業，後續將依住戶意見及相關法令辦理。</p>
             </div>
 
             <!-- 資訊卡快速連結 -->
@@ -91,8 +52,8 @@
                 <a href="#faq" class="bg-white text-primary rounded-xl p-4 text-center shadow hover:-translate-y-1 transition duration-300 font-bold flex flex-col items-center justify-center gap-2">
                     <i class="fa-solid fa-circle-question text-2xl"></i> 常見問題
                 </a>
-                <a href="#survey" class="bg-success text-white border border-success rounded-xl p-4 text-center shadow hover:-translate-y-1 transition duration-300 font-bold flex flex-col items-center justify-center gap-2">
-                    <i class="fa-solid fa-clipboard-list text-2xl"></i> 意願調查
+                <a href="assets/file/阿曼之旅公寓大廈管理委員會(集合住宅部分)115建物安檢缺失照片表.pdf" target="_blank" rel="noopener noreferrer" class="bg-success text-white border border-success rounded-xl p-4 text-center shadow hover:-translate-y-1 transition duration-300 font-bold flex flex-col items-center justify-center gap-2">
+                    <i class="fa-regular fa-file-pdf text-2xl"></i> 查看檢查文件
                 </a>
             </div>
         </div>
@@ -100,30 +61,43 @@
 
     <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
 
-        <!-- 流程圖 -->
+        <!-- 近年公共安全案例 -->
         <section>
-            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
-                <i class="fa-solid fa-arrows-spin"></i> 處理流程
+            <h2 class="mb-6 flex items-center gap-2 text-2xl font-bold text-primary">
+                <i class="fa-solid fa-newspaper"></i> 近年公共安全案例
             </h2>
-            <div class="bg-white rounded-2xl shadow-sm p-6 overflow-x-auto">
-                <div class="flex items-center min-w-max gap-3 text-sm font-medium text-gray-700">
-                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-clipboard-check"></i></div><span>公安檢查</span></div>
-                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
-                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center"><i class="fa-solid fa-circle-exclamation"></i></div><span>發現缺失</span></div>
-                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
-                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i class="fa-solid fa-lightbulb"></i></div><span>整理方案</span></div>
-                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
-                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-lg"><i class="fa-solid fa-mobile-screen"></i></div><span class="font-bold text-primary">閱讀說明(本站)</span></div>
-                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
-                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center"><i class="fa-solid fa-pen-to-square"></i></div><span>填寫意願</span></div>
-                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
-                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center"><i class="fa-solid fa-chart-pie"></i></div><span>統計結果</span></div>
-                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
-                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center"><i class="fa-solid fa-person-digging"></i></div><span>施工改善</span></div>
-                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
-                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-stamp"></i></div><span>公安複檢</span></div>
-                </div>
-            </div>
+            <ul class="space-y-3">
+                <li>
+                    <a href="https://estate.ltn.com.tw/article/27328" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-3 rounded-xl border border-gray-100 bg-white p-4 font-medium text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-primary">
+                        <span>最後4天！北市6～7樓住宅「少作這事」最高罰30萬，沒成立管委會也要罰（自由電子報）</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square mt-1 shrink-0 text-sm text-primary"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.ctee.com.tw/news/20260325701378-431401" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-3 rounded-xl border border-gray-100 bg-white p-4 font-medium text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-primary">
+                        <span>沒管委會罰更重！北市6至7樓公寓公安申報倒數，逾期最高罰30萬（工商時報）</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square mt-1 shrink-0 text-sm text-primary"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.upmedia.mg/tw/investigation/economy/257129" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-3 rounded-xl border border-gray-100 bg-white p-4 font-medium text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-primary">
+                        <span>【社區安檢新制】選舉年遇「拆鐵門之亂」官方防爆民怨先輔導加豁免（上報）</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square mt-1 shrink-0 text-sm text-primary"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://today.line.me/tw/v3/article/VxXZ6e5" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-3 rounded-xl border border-gray-100 bg-white p-4 font-medium text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-primary">
+                        <span>你家大門被拆了嗎？全台鐵門之亂爆民怨，國土署揭「拆不拆」兩大原則（三立新聞網）</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square mt-1 shrink-0 text-sm text-primary"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://udn.com/news/story/7241/9418223" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-3 rounded-xl border border-gray-100 bg-white p-4 font-medium text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-primary">
+                        <span>城中城大火後掀「拆門」爭議，國土署揭判斷關鍵（聯合新聞網）</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square mt-1 shrink-0 text-sm text-primary"></i>
+                    </a>
+                </li>
+            </ul>
         </section>
 
         <!-- 時間軸 -->
@@ -136,7 +110,7 @@
                     <li class="pl-6 relative">
                         <div class="absolute w-4 h-4 bg-gray-300 rounded-full -left-[9px] top-1"></div>
                         <p class="font-bold text-gray-500">已完成</p>
-                        <h3 class="font-bold text-lg">公安檢查</h3>
+                        <h3 class="font-bold text-lg">公安檢查(115/06/18)</h3>
                     </li>
                     <li class="pl-6 relative">
                         <div class="absolute w-4 h-4 bg-primary rounded-full ring-4 ring-blue-100 -left-[9px] top-1"></div>
@@ -170,46 +144,89 @@
                 <i class="fa-solid fa-tree-city"></i> 公共區域改善
             </h2>
             
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- 卡片 1 -->
-                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
-                    <div class="image-placeholder m-4">
-                                            </div>
-                    <div class="p-5 pt-2 space-y-3">
-                        <h3 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-layer-group text-primary"></i> 木作牆面</h3>
-                        <p class="text-sm text-danger bg-red-50 p-2 rounded flex gap-2">
-                            <i class="fa-solid fa-gavel mt-1"></i> 法規：不符合內部裝修材料耐燃等級規定。
-                        </p>
-                        <div class="text-gray-700">
-                            <p><strong>缺失原因：</strong> 原裝潢材料年代久遠，未達現行防火標準。</p>
-                            <p class="text-success font-medium mt-2"><i class="fa-solid fa-screwdriver-wrench"></i> 改善方向：</p>
-                            <ul class="list-disc list-inside ml-2 text-sm">
-                                <li>更換為一級耐燃材料</li>
-                                <li>重新塗裝防火漆</li>
-                            </ul>
-                        </div>
+            <div class="grid gap-6 md:grid-cols-2">
+                <!-- 編號 22、23 -->
+                <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <div class="grid grid-cols-2 gap-2 p-4 pb-0">
+                        <img src="assets/img/n-22.jpg" alt="編號22：7號R2樓電梯機房安全梯進出口非防火門" class="h-full w-full rounded-lg object-cover" loading="lazy">
+                        <img src="assets/img/n-23.jpg" alt="編號23：9號R2樓電梯機房安全梯進出口非防火門" class="h-full w-full rounded-lg object-cover" loading="lazy">
                     </div>
-                </div>
+                    <div class="space-y-3 p-5">
+                        <h3 class="text-xl font-bold text-primary">R2樓電梯機房安全梯進出口非防火門</h3>
+                        <p class="rounded-lg bg-red-50 p-3 text-sm text-danger"><strong>缺失說明：</strong>7號及9號R2樓電梯機房安全梯進出口非防火門，不符合安全梯出入口防火時效、阻熱及遮煙性能規定。</p>
+                        <p class="rounded-lg bg-emerald-50 p-3 text-sm font-medium text-emerald-800"><i class="fa-solid fa-screwdriver-wrench mr-1"></i><strong>改善：</strong>依規定或原核准圖復原，防火門扇雙面補鐵板。</p>
+                        <p class="flex items-center gap-2 rounded-lg bg-blue-50 p-3 text-sm font-medium text-blue-800"><i class="fa-solid fa-helmet-safety"></i><strong>處理進度：</strong>已聯繫廠商處理。</p>
+                    </div>
+                </article>
 
-                <!-- 卡片 2 -->
-                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
-                    <div class="image-placeholder m-4">
-                                            </div>
-                    <div class="p-5 pt-2 space-y-3">
-                        <h3 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-couch text-primary"></i> 大廳木作</h3>
-                        <p class="text-sm text-danger bg-red-50 p-2 rounded flex gap-2">
-                            <i class="fa-solid fa-gavel mt-1"></i> 法規：防火區劃未達標準。
-                        </p>
-                        <div class="text-gray-700">
-                            <p><strong>目前評估：</strong></p>
-                            <ul class="list-disc list-inside ml-2 text-sm mb-2">
-                                <li>耐燃材料改善</li>
-                                <li>防火區劃改善</li>
-                            </ul>
-                            <p class="text-xs text-gray-400 mt-2 bg-gray-50 p-2 rounded">註：實際施工方案依專業廠商評估後執行。</p>
-                        </div>
+                <!-- 編號 24 -->
+                <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <img src="assets/img/n-24.jpg" alt="編號24：R1樓安全梯進出口防火門設門檻阻礙逃生" class="aspect-[4/3] w-full object-cover" loading="lazy">
+                    <div class="space-y-3 p-5">
+                        <h3 class="text-xl font-bold text-primary">R1樓安全梯進出口防火門設門檻阻礙逃生</h3>
+                        <p class="rounded-lg bg-red-50 p-3 text-sm text-danger"><strong>缺失說明：</strong>安全梯進出口設置門檻，可能阻礙避難逃生。</p>
+                        <p class="rounded-lg bg-emerald-50 p-3 text-sm font-medium text-emerald-800"><i class="fa-solid fa-screwdriver-wrench mr-1"></i><strong>改善：</strong>門檻加貼反光條警示或順平處理。</p>
+                        <p class="flex items-center gap-2 rounded-lg bg-blue-50 p-3 text-sm font-medium text-blue-800"><i class="fa-solid fa-box-open"></i><strong>處理進度：</strong>已採購反光條。</p>
                     </div>
-                </div>
+                </article>
+
+                <!-- 編號 25 -->
+                <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <img src="assets/img/n-25.jpg" alt="編號25：9號棟地下1樓安全梯防火門上方管線貫穿孔洞" class="aspect-[4/3] w-full object-cover" loading="lazy">
+                    <div class="space-y-3 p-5">
+                        <h3 class="text-xl font-bold text-primary">地下1樓安全梯防火門上方管線貫穿孔洞</h3>
+                        <p class="rounded-lg bg-red-50 p-3 text-sm text-danger"><strong>缺失說明：</strong>9號棟地下1樓安全梯防火門上方有管線貫穿孔洞，未達防火區劃要求。</p>
+                        <p class="rounded-lg bg-emerald-50 p-3 text-sm font-medium text-emerald-800"><i class="fa-solid fa-screwdriver-wrench mr-1"></i><strong>改善：</strong>孔洞以具一小時以上防火時效之防火泥填滿。</p>
+                        <p class="flex items-center gap-2 rounded-lg bg-blue-50 p-3 text-sm font-medium text-blue-800"><i class="fa-solid fa-helmet-safety"></i><strong>處理進度：</strong>已聯繫廠商處理。</p>
+                    </div>
+                </article>
+
+                <!-- 編號 26 -->
+                <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <img src="assets/img/n-26.jpg" alt="編號26：1樓門廳安全梯間天花板未以耐燃一級材料裝修" class="aspect-[4/3] w-full object-cover" loading="lazy">
+                    <div class="space-y-3 p-5">
+                        <h3 class="text-xl font-bold text-primary">1樓門廳安全梯間天花板未以耐燃一級材料裝修</h3>
+                        <p class="rounded-lg bg-red-50 p-3 text-sm text-danger"><strong>缺失說明：</strong>安全梯間天花板裝修材料未達耐燃一級規定。</p>
+                        <p class="rounded-lg bg-emerald-50 p-3 text-sm font-medium text-emerald-800"><i class="fa-solid fa-screwdriver-wrench mr-1"></i><strong>改善：</strong>天花板以耐燃一級材料裝修，面貼矽酸鈣板。<span class="block mt-1">同編號27及28改善方式。</span></p>
+                        <p class="flex items-center gap-2 rounded-lg bg-orange-50 p-3 text-sm font-medium text-orange-800"><i class="fa-solid fa-file-invoice-dollar"></i><strong>處理進度：</strong>已聯繫廠商，報價作業中。</p>
+                    </div>
+                </article>
+
+                <!-- 編號 27 -->
+                <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <img src="assets/img/n-27.jpg" alt="編號27：9號5樓安全梯間牆面未以耐燃一級材料裝修" class="aspect-[4/3] w-full object-cover" loading="lazy">
+                    <div class="space-y-3 p-5">
+                        <h3 class="text-xl font-bold text-primary">9號5樓安全梯間牆面未以耐燃一級材料裝修</h3>
+                        <p class="rounded-lg bg-red-50 p-3 text-sm text-danger"><strong>缺失說明：</strong>安全梯間牆面裝修材料未達耐燃一級規定。</p>
+                        <p class="rounded-lg bg-emerald-50 p-3 text-sm font-medium text-emerald-800"><i class="fa-solid fa-screwdriver-wrench mr-1"></i><strong>改善：</strong>牆面以耐燃一級材料裝修，面貼矽酸鈣板。</p>
+                        <p class="flex items-center gap-2 rounded-lg bg-orange-50 p-3 text-sm font-medium text-orange-800"><i class="fa-solid fa-file-invoice-dollar"></i><strong>處理進度：</strong>已聯繫廠商，報價作業中。</p>
+                    </div>
+                </article>
+
+                <!-- 編號 28 -->
+                <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <img src="assets/img/n-28.jpg" alt="編號28：1樓至R2F安全梯中間假柱未以耐燃一級材料裝修" class="aspect-[4/3] w-full object-cover" loading="lazy">
+                    <div class="space-y-3 p-5">
+                        <h3 class="text-xl font-bold text-primary">1樓至R2F安全梯中間假柱未以耐燃一級材料裝修</h3>
+                        <p class="rounded-lg bg-red-50 p-3 text-sm text-danger"><strong>缺失說明：</strong>安全梯中間假柱裝修材料未達耐燃一級規定。</p>
+                        <p class="rounded-lg bg-emerald-50 p-3 text-sm font-medium text-emerald-800"><i class="fa-solid fa-screwdriver-wrench mr-1"></i><strong>改善：</strong>牆面以耐燃一級材料裝修，面貼矽酸鈣板。</p>
+                        <p class="flex items-center gap-2 rounded-lg bg-orange-50 p-3 text-sm font-medium text-orange-800"><i class="fa-solid fa-file-invoice-dollar"></i><strong>處理進度：</strong>已聯繫廠商，報價作業中。</p>
+                    </div>
+                </article>
+
+                <!-- 編號 29、30 -->
+                <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm md:col-span-2">
+                    <div class="grid grid-cols-2 gap-2 p-4 pb-0">
+                        <img src="assets/img/n-29.jpg" alt="編號29：7號1樓門廳安全梯間牆面未以耐燃一級材料裝修" class="h-full w-full rounded-lg object-cover" loading="lazy">
+                        <img src="assets/img/n-30.jpg" alt="編號30：9號1樓門廳安全梯間牆面未以耐燃一級材料裝修" class="h-full w-full rounded-lg object-cover" loading="lazy">
+                    </div>
+                    <div class="space-y-3 p-5">
+                        <h3 class="text-xl font-bold text-primary">7號及9號1樓門廳安全梯間牆面未以耐燃一級材料裝修</h3>
+                        <p class="rounded-lg bg-red-50 p-3 text-sm text-danger"><strong>缺失說明：</strong>1樓門廳安全梯間牆面裝修材料未達耐燃一級規定。</p>
+                        <p class="rounded-lg bg-emerald-50 p-3 text-sm font-medium text-emerald-800"><i class="fa-solid fa-screwdriver-wrench mr-1"></i><strong>改善：</strong>可於安全梯口施作防火門區劃分隔。</p>
+                        <p class="flex items-center gap-2 rounded-lg bg-orange-50 p-3 text-sm font-medium text-orange-800"><i class="fa-solid fa-file-invoice-dollar"></i><strong>處理進度：</strong>已聯繫廠商，報價作業中。</p>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -252,33 +269,20 @@
                     </div>
                 </details>
 
-                <!-- 3. 社區現況 & 案例 Accordion -->
+                <!-- 3. 社區現況 Accordion -->
                 <details class="bg-white rounded-2xl shadow-sm group">
                     <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-lg">
-                        <span class="flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left"></i> 3. 社區現況與安全案例</span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left"></i> 3. 社區現況</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
                     <div class="px-5 pb-5 pt-0 border-t mt-2">
-                        <div class="grid md:grid-cols-2 gap-6 mt-4">
+                        <div class="mt-4">
                             <div>
                                 <h4 class="font-bold text-gray-800 mb-2">社區現況</h4>
                                 <ul class="list-disc list-inside text-gray-600 space-y-2">
                                     <li>為建商原始配置設計。</li>
                                     <li>非住戶自行改裝或違建。</li>
                                     <li>本次為歷年檢查中首次遭列為缺失。</li>
-                                </ul>
-                            </div>
-                            <div class="bg-gray-50 p-4 rounded-xl">
-                                <h4 class="font-bold text-danger mb-2"><i class="fa-solid fa-fire"></i> 近年公共安全案例</h4>
-                                <ul class="space-y-3 text-sm">
-                                    <li>
-                                        <a href="#" class="text-blue-600 hover:underline block truncate">新聞：某大樓火警 因防盜門阻礙逃生釀傷亡...</a>
-                                        <span class="text-xs text-gray-400">2023-11-15</span>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="text-blue-600 hover:underline block truncate">新聞：梯間雜物及外開門影響救援，消防局籲改善...</a>
-                                        <span class="text-xs text-gray-400">2024-02-03</span>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -296,28 +300,46 @@
                             <strong>提醒：</strong> 若您的戶號未列於本清單，代表您的外門位置符合規範，本次<span class="text-danger font-bold underline">無需</span>填寫住戶意願調查。
                         </div>
                     </div>
+                    <p class="mb-4 text-center text-sm font-medium text-gray-500"><i class="fa-regular fa-hand-pointer mr-1"></i> 點選戶號查看個別改善案件</p>
                     
                     <div class="grid grid-cols-2 gap-4 text-center">
                         <div class="bg-gray-50 rounded-xl p-4">
-                            <h4 class="font-black text-lg text-primary mb-3 bg-blue-100 py-1 rounded">A棟 需改善戶號</h4>
-                            <ul class="text-gray-700 space-y-1 font-medium font-mono">
-                                <li>2F-1, 2F-2</li>
-                                <li>3F-1, 3F-2</li>
-                                <li>4F-1, 4F-2</li>
-                                <li>5F-1, 5F-2</li>
-                                <li>...以此類推</li>
+                            <h4 class="font-black text-lg text-primary mb-3 bg-blue-100 py-1 rounded">7號棟 需改善戶號</h4>
+                            <ul class="grid grid-cols-2 gap-2 text-gray-700 font-medium font-mono">
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="11F">11F</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="10F">10F</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="10F-1">10F-1</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="9F-2">9F-2</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="8F-5">8F-5</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="7F-6">7F-6</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="6F-3">6F-3</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="5F-5">5F-5</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="4F-6">4F-6</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="3F-6">3F-6</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="7號棟" data-unit="2F-6">2F-6</button></li>
                             </ul>
                         </div>
                         <div class="bg-gray-50 rounded-xl p-4">
-                            <h4 class="font-black text-lg text-primary mb-3 bg-blue-100 py-1 rounded">B棟 需改善戶號</h4>
-                            <ul class="text-gray-700 space-y-1 font-medium font-mono">
-                                <li>2F-3, 2F-4</li>
-                                <li>3F-3, 3F-4</li>
-                                <li>4F-3, 4F-4</li>
-                                <li>5F-3, 5F-4</li>
-                                <li>...以此類推</li>
+                            <h4 class="font-black text-lg text-primary mb-3 bg-blue-100 py-1 rounded">9號棟 需改善戶號</h4>
+                            <ul class="grid grid-cols-2 gap-2 text-gray-700 font-medium font-mono">
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="11F">11F</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="10F-1">10F-1</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="10F-2">10F-2</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="9F-2">9F-2</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="8F-2">8F-2</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="6F-2">6F-2</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="5F-2">5F-2</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="4F-2">4F-2</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="3F-2">3F-2</button></li>
+                                <li><button type="button" class="unit-case-button" data-unit-case data-building="9號棟" data-unit="2F-2">2F-2</button></li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="mt-5 text-center">
+                        <a href="assets/file/阿曼之旅公寓大廈管理委員會(集合住宅部分)115建物安檢缺失照片表.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2 text-sm font-bold text-primary transition hover:bg-blue-50">
+                            <i class="fa-regular fa-file-pdf"></i> 查看原始檢查文件
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -330,19 +352,21 @@
                     <div class="space-y-4">
                         <!-- 方案 A -->
                         <div class="border-2 border-success rounded-xl p-5 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 bg-success text-white px-3 py-1 rounded-bl-xl font-bold text-sm">推薦</div>
                             <h4 class="text-lg font-black text-success mb-2 flex items-center gap-2"><span class="bg-success text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">A</span> 社區統一暫時拆除</h4>
                             <ul class="list-disc list-inside text-gray-700 space-y-1 ml-2">
-                                <li>公安檢查完成後，恢復安裝。</li>
-                                <li><strong class="text-primary">第一次拆除及恢復費用由「社區公積金」支應。</strong></li>
-                                <li class="text-sm text-gray-500 mt-2">※ 後續如主管機關再次要求改善，將依當時法令及區分所有權人會議決議辦理。</li>
+                                <li>拆除拍照提供公安檢查，並恢復安裝。</li>
+                                <li><strong class="text-primary">第一次拆除及恢復費用「1,000元」由「社區公積金」支應。</strong></li>
+                                <li class="text-sm text-gray-500 mt-2">※ 後續如下一次公共安全檢查或主管機關再次要求改善，費用將由住戶自行負擔。</li>
                             </ul>
                         </div>
 
                         <!-- 方案 B -->
-                        <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
-                            <h4 class="text-lg font-black text-gray-800 mb-2 flex items-center gap-2"><span class="bg-gray-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">B</span> 永久拆除外門</h4>
-                            <p class="text-gray-700 ml-8">配合法規，永久拆除該外開門戶，確保梯間逃生動線絕對暢通。</p>
+                        <div class="border border-blue-200 rounded-xl p-5 bg-blue-50">
+                            <h4 class="text-lg font-black text-primary mb-2 flex items-center gap-2"><span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">B</span> 永久拆除外門</h4>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-2">
+                                <li>配合法規，拆除該外開門戶並不再安裝。</li>
+                                <li><strong class="text-primary">拆除及清運費用「1,000元」由「社區公積金」支應。</strong></li>
+                             </ul>
                         </div>
 
                         <!-- 方案 C -->
@@ -351,6 +375,11 @@
                             <p class="text-gray-700 ml-8 text-sm">
                                 若主管機關後續要求改善、限期改善或依法裁處，<strong class="text-danger underline">相關責任及罰鍰費用由住戶自行負擔</strong>。
                             </p>
+                        </div>
+
+                        <div class="flex items-start gap-3 rounded-xl border border-orange-200 bg-orange-50 p-4 text-sm leading-relaxed text-orange-900">
+                            <i class="fa-solid fa-circle-info mt-1 text-warning"></i>
+                            <p><strong>備註：</strong>為配合社區作業，敬請住戶在<strong class="text-danger">7月10日前</strong>填寫表單；如後續才要求協助拆除，費用為<strong class="text-danger">1,500元</strong>，由住戶自行負擔，謝謝。</p>
                         </div>
                     </div>
                 </div>
@@ -446,14 +475,49 @@
     </main>
 
     <footer class="bg-gray-800 text-gray-400 text-center py-8 text-sm mt-8">
-        <p class="mb-2">阿曼之旅社區管理委員會 敬啟</p>
-        <p>如有任何疑問，請洽管理中心 (02) 1234-5678</p>
-        <div class="mt-4 flex justify-center gap-4 text-xs">
-            <a href="#" class="hover:text-white">最新公告</a> | 
-            <a href="#" class="hover:text-white">工程進度</a> | 
-            <a href="#" class="hover:text-white">公安改善歷程</a>
-        </div>
+        <p>阿曼之旅社區管理委員會</p>
     </footer>
+
+    <!-- 住戶個別改善案件 -->
+    <dialog id="unit-case-modal" aria-labelledby="unit-case-title" class="unit-case-modal w-[calc(100%-2rem)] max-w-lg rounded-2xl p-0 shadow-2xl">
+        <div class="max-h-[85vh] overflow-y-auto">
+            <div class="sticky top-0 flex items-center justify-between border-b border-gray-100 bg-white px-5 py-4">
+                <h2 id="unit-case-title" class="text-xl font-black text-primary">住戶改善案件</h2>
+                <button type="button" data-modal-close class="flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition hover:bg-gray-100" aria-label="關閉案件說明">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="space-y-4 p-5 text-gray-700">
+                <div class="rounded-xl bg-gray-50 p-4">
+                    <h3 class="mb-2 font-bold text-gray-900">缺失說明：</h3>
+                    <p class="mb-2 font-medium text-danger">建築技術規則設計施工篇 第 33 條</p>
+                    <p class="leading-relaxed">各樓層進入安全梯或特別安全梯，其開向樓梯平臺門扇之迴轉半徑不得與安全或特別安全梯內樓梯寬度之迴轉半徑相交。</p>
+                </div>
+                <div class="rounded-xl border border-blue-200 bg-blue-50 p-4">
+                    <h3 class="mb-2 font-bold text-primary">改善：</h3>
+                    <p class="font-medium">住戶於安全梯間外加之外開門拆除。</p>
+                </div>
+                <figure id="unit-case-photo-container" hidden class="overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
+                    <figcaption class="border-b border-gray-200 px-4 py-3 font-bold text-gray-900">缺失照片：</figcaption>
+                    <img id="unit-case-photo" src="" alt="" class="h-auto w-full">
+                </figure>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- 固定底部操作列 -->
+    <nav aria-label="頁面快速操作" class="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+        <div class="mx-auto grid max-w-4xl grid-cols-2 text-sm sm:text-base">
+            <a href="#faq" class="flex items-center justify-center gap-2 px-4 py-4 font-bold text-primary transition hover:bg-blue-50">
+                <i class="fa-solid fa-comments"></i>
+                常見問題 FAQ
+            </a>
+            <a href="#survey" class="flex items-center justify-center gap-2 bg-success px-4 py-4 font-bold text-white transition hover:bg-emerald-700">
+                <i class="fa-solid fa-clipboard-list"></i>
+                填寫意願
+            </a>
+        </div>
+    </nav>
 
 </body>
 </html>
