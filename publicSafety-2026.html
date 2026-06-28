@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿曼之旅社區115年度公共安全檢查改善說明</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f3f4f6; }
+        
+        /* 隱藏原生 details 的箭頭並自訂 */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
+        
+        @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e5e7eb;
+            color: #6b7280;
+            border: 2px dashed #9ca3af;
+            border-radius: 0.5rem;
+            min-height: 200px;
+            font-weight: 500;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a', /* 深藍：公告 */
+                        success: '#059669', /* 綠色：改善方案 */
+                        warning: '#f97316', /* 橘色：提醒 */
+                        danger: '#dc2626',  /* 紅色：法規 */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-800 antialiased selection:bg-primary selection:text-white pb-20">
+
+    <!-- 導覽列 -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center overflow-x-auto whitespace-nowrap">
+            <a href="#" class="font-bold text-primary flex items-center gap-2">
+                <i class="fa-solid fa-building-shield"></i> 阿曼之旅社區
+            </a>
+            <div class="flex gap-4 text-sm font-medium text-gray-600">
+                <a href="#public-area" class="hover:text-primary transition">公共區域</a>
+                <a href="#door-area" class="hover:text-primary transition">外門改善</a>
+                <a href="#faq" class="hover:text-primary transition">FAQ</a>
+                <a href="#survey" class="bg-success text-white px-3 py-1 rounded-full hover:bg-emerald-700 transition">填寫意願</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 首頁區 -->
+    <header class="bg-primary text-white py-12 px-4 rounded-b-[2.5rem] shadow-lg relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-block bg-white/20 px-3 py-1 rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
+                📢 最新公告
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black mb-6 leading-tight">阿曼之旅社區<br class="hidden md:block">115年度公共安全檢查改善說明</h1>
+            
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 md:p-6 mb-8 text-white/90 space-y-3">
+                <p class="flex items-start gap-2"><i class="fa-solid fa-check-circle mt-1 text-emerald-400"></i> 本社區依法每三年辦理公共安全檢查。</p>
+                <p class="flex items-start gap-2"><i class="fa-solid fa-check-circle mt-1 text-emerald-400"></i> 本次檢查提出部分改善事項。</p>
+                <p class="flex items-start gap-2"><i class="fa-solid fa-check-circle mt-1 text-emerald-400"></i> 本網站目的為協助住戶了解改善內容及後續處理方式。</p>
+                <p class="flex items-start gap-2 font-bold text-yellow-300"><i class="fa-solid fa-triangle-exclamation mt-1"></i> 目前尚未進入住戶外門拆除作業，後續將依住戶意見及相關法令辦理。</p>
+            </div>
+
+            <!-- 資訊卡快速連結 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <a href="#public-area" class="bg-white text-primary rounded-xl p-4 text-center shadow hover:-translate-y-1 transition duration-300 font-bold flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-building text-2xl"></i> 公共區域改善
+                </a>
+                <a href="#door-area" class="bg-white text-primary rounded-xl p-4 text-center shadow hover:-translate-y-1 transition duration-300 font-bold flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-door-open text-2xl"></i> 住戶外門改善
+                </a>
+                <a href="#faq" class="bg-white text-primary rounded-xl p-4 text-center shadow hover:-translate-y-1 transition duration-300 font-bold flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-question text-2xl"></i> 常見問題
+                </a>
+                <a href="#survey" class="bg-success text-white border border-success rounded-xl p-4 text-center shadow hover:-translate-y-1 transition duration-300 font-bold flex flex-col items-center justify-center gap-2">
+                    <i class="fa-solid fa-clipboard-list text-2xl"></i> 意願調查
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+
+        <!-- 流程圖 -->
+        <section>
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-arrows-spin"></i> 處理流程
+            </h2>
+            <div class="bg-white rounded-2xl shadow-sm p-6 overflow-x-auto">
+                <div class="flex items-center min-w-max gap-3 text-sm font-medium text-gray-700">
+                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-clipboard-check"></i></div><span>公安檢查</span></div>
+                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
+                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center"><i class="fa-solid fa-circle-exclamation"></i></div><span>發現缺失</span></div>
+                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
+                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i class="fa-solid fa-lightbulb"></i></div><span>整理方案</span></div>
+                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
+                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-lg"><i class="fa-solid fa-mobile-screen"></i></div><span class="font-bold text-primary">閱讀說明(本站)</span></div>
+                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
+                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center"><i class="fa-solid fa-pen-to-square"></i></div><span>填寫意願</span></div>
+                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
+                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center"><i class="fa-solid fa-chart-pie"></i></div><span>統計結果</span></div>
+                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
+                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center"><i class="fa-solid fa-person-digging"></i></div><span>施工改善</span></div>
+                    <i class="fa-solid fa-chevron-right text-gray-300"></i>
+                    <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-stamp"></i></div><span>公安複檢</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 時間軸 -->
+        <section>
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                <i class="fa-regular fa-calendar-check"></i> 預定時程
+            </h2>
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <ul class="relative border-l-2 border-gray-200 ml-3 space-y-6">
+                    <li class="pl-6 relative">
+                        <div class="absolute w-4 h-4 bg-gray-300 rounded-full -left-[9px] top-1"></div>
+                        <p class="font-bold text-gray-500">已完成</p>
+                        <h3 class="font-bold text-lg">公安檢查</h3>
+                    </li>
+                    <li class="pl-6 relative">
+                        <div class="absolute w-4 h-4 bg-primary rounded-full ring-4 ring-blue-100 -left-[9px] top-1"></div>
+                        <p class="font-bold text-primary">目前階段</p>
+                        <h3 class="font-bold text-lg">公告說明 & QR Code 上線</h3>
+                    </li>
+                    <li class="pl-6 relative">
+                        <div class="absolute w-4 h-4 bg-white border-2 border-gray-300 rounded-full -left-[9px] top-1"></div>
+                        <p class="font-bold text-gray-400">下一步</p>
+                        <h3 class="font-bold text-lg">住戶填寫意願</h3>
+                    </li>
+                    <li class="pl-6 relative">
+                        <div class="absolute w-4 h-4 bg-white border-2 border-gray-300 rounded-full -left-[9px] top-1"></div>
+                        <h3 class="font-bold text-gray-600">統計結果與決議</h3>
+                    </li>
+                    <li class="pl-6 relative">
+                        <div class="absolute w-4 h-4 bg-white border-2 border-gray-300 rounded-full -left-[9px] top-1"></div>
+                        <h3 class="font-bold text-gray-600">統一施工</h3>
+                    </li>
+                    <li class="pl-6 relative">
+                        <div class="absolute w-4 h-4 bg-white border-2 border-gray-300 rounded-full -left-[9px] top-1"></div>
+                        <h3 class="font-bold text-gray-600">完工公告 & 複檢完成</h3>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 公共區域改善 -->
+        <section id="public-area" class="scroll-mt-20">
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-tree-city"></i> 公共區域改善
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 卡片 1 -->
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+                    <div class="image-placeholder m-4">
+                                            </div>
+                    <div class="p-5 pt-2 space-y-3">
+                        <h3 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-layer-group text-primary"></i> 木作牆面</h3>
+                        <p class="text-sm text-danger bg-red-50 p-2 rounded flex gap-2">
+                            <i class="fa-solid fa-gavel mt-1"></i> 法規：不符合內部裝修材料耐燃等級規定。
+                        </p>
+                        <div class="text-gray-700">
+                            <p><strong>缺失原因：</strong> 原裝潢材料年代久遠，未達現行防火標準。</p>
+                            <p class="text-success font-medium mt-2"><i class="fa-solid fa-screwdriver-wrench"></i> 改善方向：</p>
+                            <ul class="list-disc list-inside ml-2 text-sm">
+                                <li>更換為一級耐燃材料</li>
+                                <li>重新塗裝防火漆</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+                    <div class="image-placeholder m-4">
+                                            </div>
+                    <div class="p-5 pt-2 space-y-3">
+                        <h3 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-couch text-primary"></i> 大廳木作</h3>
+                        <p class="text-sm text-danger bg-red-50 p-2 rounded flex gap-2">
+                            <i class="fa-solid fa-gavel mt-1"></i> 法規：防火區劃未達標準。
+                        </p>
+                        <div class="text-gray-700">
+                            <p><strong>目前評估：</strong></p>
+                            <ul class="list-disc list-inside ml-2 text-sm mb-2">
+                                <li>耐燃材料改善</li>
+                                <li>防火區劃改善</li>
+                            </ul>
+                            <p class="text-xs text-gray-400 mt-2 bg-gray-50 p-2 rounded">註：實際施工方案依專業廠商評估後執行。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 住戶外門改善（重點） -->
+        <section id="door-area" class="scroll-mt-20">
+            <h2 class="text-3xl font-black text-primary mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-door-open"></i> 住戶外門改善
+            </h2>
+            <p class="text-gray-500 mb-6 font-medium">本次公安檢查重點項目，請詳細閱讀。</p>
+            
+            <div class="space-y-6">
+                <!-- 1. 改善原因 -->
+                <div class="bg-white rounded-2xl shadow-sm p-5 md:p-8">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2">1. 改善原因</h3>
+                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                        <div class="image-placeholder h-48">
+                                                    </div>
+                        <div class="image-placeholder h-48">
+                                                    </div>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        依<strong class="text-danger">建築技術規則設計施工篇第33條</strong>，本社區部分靠近樓梯平台之住戶，外門於向外開啟時，<strong class="text-warning">可能影響避難逃生空間之暢通</strong>，因此依規定提出改善建議。
+                    </p>
+                </div>
+
+                <!-- 2. 法規依據 Accordion -->
+                <details class="bg-white rounded-2xl shadow-sm group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-lg">
+                        <span class="flex items-center gap-2 text-danger"><i class="fa-solid fa-book-scale"></i> 2. 法規依據</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-5 pb-5 pt-0 border-t mt-2 text-sm leading-relaxed bg-red-50 rounded-b-2xl">
+                        <br>
+                        <strong>建築技術規則建築設計施工編 第 33 條</strong><br>
+                        樓梯之構造，應依左列規定：<br>
+                        一、樓梯及樓梯間應具備防火時效，其構造應依本編第六十九條之規定。<br>
+                        二、樓梯間應設有直接採光及通風之窗戶...<br>
+                        三、<span class="bg-yellow-200 text-danger font-bold px-1">樓梯平台及直通樓梯之出入口，其開啟方向應向避難方向開啟，且開啟時不得妨礙避難器具之使用及避難逃生之動線。</span><br>
+                        ...（其餘略）
+                    </div>
+                </details>
+
+                <!-- 3. 社區現況 & 案例 Accordion -->
+                <details class="bg-white rounded-2xl shadow-sm group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-lg">
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left"></i> 3. 社區現況與安全案例</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-0 border-t mt-2">
+                        <div class="grid md:grid-cols-2 gap-6 mt-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">社區現況</h4>
+                                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                    <li>為建商原始配置設計。</li>
+                                    <li>非住戶自行改裝或違建。</li>
+                                    <li>本次為歷年檢查中首次遭列為缺失。</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-xl">
+                                <h4 class="font-bold text-danger mb-2"><i class="fa-solid fa-fire"></i> 近年公共安全案例</h4>
+                                <ul class="space-y-3 text-sm">
+                                    <li>
+                                        <a href="#" class="text-blue-600 hover:underline block truncate">新聞：某大樓火警 因防盜門阻礙逃生釀傷亡...</a>
+                                        <span class="text-xs text-gray-400">2023-11-15</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-blue-600 hover:underline block truncate">新聞：梯間雜物及外開門影響救援，消防局籲改善...</a>
+                                        <span class="text-xs text-gray-400">2024-02-03</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 4. 我的戶號是否需要改善 -->
+                <div class="bg-white rounded-2xl shadow-sm p-5 md:p-8 border-t-4 border-warning">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        4. 我的戶號是否需要改善？
+                    </h3>
+                    <div class="bg-orange-50 border border-orange-200 text-orange-800 px-4 py-3 rounded-lg mb-6 flex items-start gap-3">
+                        <i class="fa-solid fa-circle-info mt-1"></i>
+                        <div>
+                            <strong>提醒：</strong> 若您的戶號未列於本清單，代表您的外門位置符合規範，本次<span class="text-danger font-bold underline">無需</span>填寫住戶意願調查。
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-gray-50 rounded-xl p-4">
+                            <h4 class="font-black text-lg text-primary mb-3 bg-blue-100 py-1 rounded">A棟 需改善戶號</h4>
+                            <ul class="text-gray-700 space-y-1 font-medium font-mono">
+                                <li>2F-1, 2F-2</li>
+                                <li>3F-1, 3F-2</li>
+                                <li>4F-1, 4F-2</li>
+                                <li>5F-1, 5F-2</li>
+                                <li>...以此類推</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-4">
+                            <h4 class="font-black text-lg text-primary mb-3 bg-blue-100 py-1 rounded">B棟 需改善戶號</h4>
+                            <ul class="text-gray-700 space-y-1 font-medium font-mono">
+                                <li>2F-3, 2F-4</li>
+                                <li>3F-3, 3F-4</li>
+                                <li>4F-3, 4F-4</li>
+                                <li>5F-3, 5F-4</li>
+                                <li>...以此類推</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. 管委會改善方案 -->
+                <div class="bg-white rounded-2xl shadow-sm p-5 md:p-8">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-success"></i> 5. 管委會改善方案選項
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <!-- 方案 A -->
+                        <div class="border-2 border-success rounded-xl p-5 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-success text-white px-3 py-1 rounded-bl-xl font-bold text-sm">推薦</div>
+                            <h4 class="text-lg font-black text-success mb-2 flex items-center gap-2"><span class="bg-success text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">A</span> 社區統一暫時拆除</h4>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-2">
+                                <li>公安檢查完成後，恢復安裝。</li>
+                                <li><strong class="text-primary">第一次拆除及恢復費用由「社區公積金」支應。</strong></li>
+                                <li class="text-sm text-gray-500 mt-2">※ 後續如主管機關再次要求改善，將依當時法令及區分所有權人會議決議辦理。</li>
+                            </ul>
+                        </div>
+
+                        <!-- 方案 B -->
+                        <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+                            <h4 class="text-lg font-black text-gray-800 mb-2 flex items-center gap-2"><span class="bg-gray-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">B</span> 永久拆除外門</h4>
+                            <p class="text-gray-700 ml-8">配合法規，永久拆除該外開門戶，確保梯間逃生動線絕對暢通。</p>
+                        </div>
+
+                        <!-- 方案 C -->
+                        <div class="border border-red-200 rounded-xl p-5 bg-red-50">
+                            <h4 class="text-lg font-black text-danger mb-2 flex items-center gap-2"><span class="bg-danger text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">C</span> 不同意改善</h4>
+                            <p class="text-gray-700 ml-8 text-sm">
+                                若主管機關後續要求改善、限期改善或依法裁處，<strong class="text-danger underline">相關責任及罰鍰費用由住戶自行負擔</strong>。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="scroll-mt-20">
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-comments"></i> 常見問題 FAQ
+            </h2>
+            <div class="space-y-3">
+                <details class="bg-white rounded-xl shadow-sm group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-4">
+                        <span>為什麼以前沒有列為缺失？</span>
+                        <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-4 pb-4 pt-0 border-t mt-2">
+                        <br>消防與建築法規近年趨於嚴格，檢查標準會隨時代更新。過去未列入缺失不代表現今符合最新法規，本次為落實公共安全而提出。
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-sm group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-4">
+                        <span>建商安裝的為何還要改善？</span>
+                        <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-4 pb-4 pt-0 border-t mt-2">
+                        <br>早期建案法規審查標準與現今不同。依據現行《建築技術規則》，只要門扇開啟會妨礙避難逃生動線，即屬於必須改善之項目，無論是否為建商原始配置。
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-sm group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-4">
+                        <span>我的戶號是否需要改善？</span>
+                        <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-4 pb-4 pt-0 border-t mt-2">
+                        <br>請參閱上方「<a href="#door-area" class="text-blue-600 underline">4. 我的戶號是否需要改善？</a>」清單。若您的戶號不在清單內，本次無需進行任何動作。
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-sm group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-4">
+                        <span>拆除外門是否影響安全防盜？</span>
+                        <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-4 pb-4 pt-0 border-t mt-2">
+                        <br>住戶仍保有原本的內門作為主要防護。考量火災等緊急狀況發生時，暢通的逃生動線對於全體住戶的生命安全更為重要。
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-sm group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-4">
+                        <span>公共區域何時施工？</span>
+                        <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-4 pb-4 pt-0 border-t mt-2">
+                        <br>目前正在統整方案與廠商報價階段。待意願調查結束且確認施工細節後，會另行張貼「施工通知」公告確切的日期與影響範圍。
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- 意願調查 Action -->
+        <section id="survey" class="scroll-mt-20">
+            <div class="bg-gradient-to-br from-blue-900 to-blue-700 rounded-3xl shadow-xl p-8 text-center text-white relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 opacity-10">
+                    <i class="fa-solid fa-clipboard-list text-[150px]"></i>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-black mb-4">住戶意願調查</h2>
+                    <p class="mb-8 text-blue-100 max-w-lg mx-auto">請需改善之住戶，於收到通知後線上填寫回覆您的意願方案，以利管委會統計並安排後續工程作業。</p>
+                    
+                    <div class="bg-white/10 p-4 rounded-xl text-left max-w-sm mx-auto mb-8 text-sm backdrop-blur-sm">
+                        <p class="font-bold mb-2 text-yellow-300">表單包含以下欄位：</p>
+                        <ul class="list-disc list-inside space-y-1 opacity-90">
+                            <li>戶號（僅列缺失戶）</li>
+                            <li>姓名及聯絡電話</li>
+                            <li>確認已閱讀本說明</li>
+                            <li>選擇改善方案 (A/B/C)</li>
+                        </ul>
+                    </div>
+
+                    <!-- 模擬連結到 Google Form -->
+                    <a href="#" class="inline-block bg-success hover:bg-emerald-500 text-white text-xl font-bold py-4 px-12 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                        <i class="fa-solid fa-pen-nib mr-2"></i> 立即填寫線上表單
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 text-center py-8 text-sm mt-8">
+        <p class="mb-2">阿曼之旅社區管理委員會 敬啟</p>
+        <p>如有任何疑問，請洽管理中心 (02) 1234-5678</p>
+        <div class="mt-4 flex justify-center gap-4 text-xs">
+            <a href="#" class="hover:text-white">最新公告</a> | 
+            <a href="#" class="hover:text-white">工程進度</a> | 
+            <a href="#" class="hover:text-white">公安改善歷程</a>
+        </div>
+    </footer>
+
+</body>
+</html>
